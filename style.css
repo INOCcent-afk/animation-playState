@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: rgb(158, 19, 19);
+}
+.loader {
+  position: relative;
+  cursor: pointer;
+}
+.loader span {
+  position: relative;
+  font-size: 10em;
+  color: #fff;
+  display: inline-block;
+  text-transform: uppercase;
+  animation: animate 2s ease-in-out infinite;
+  animation-delay: calc(0.1s * var(--i));
+  animation-play-state: paused;
+}
+.loader:hover span {
+  animation-play-state: running;
+}
+@keyframes animate {
+  0%,
+  40%,
+  100% {
+    transform: translateY(0);
+  }
+  20% {
+    transform: translateY(-50px);
+  }
+}
